@@ -13,6 +13,12 @@
 		0C29D4B719EF8ACF00D3E01B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C29D4B619EF8ACF00D3E01B /* Images.xcassets */; };
 		0C29D4BA19EF8ACF00D3E01B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C29D4B819EF8ACF00D3E01B /* LaunchScreen.xib */; };
 		0C29D4C619EF8ACF00D3E01B /* bifrostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C29D4C519EF8ACF00D3E01B /* bifrostTests.swift */; };
+		0C29D4D019EF8BCF00D3E01B /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C29D4CF19EF8BCF00D3E01B /* GameView.swift */; };
+		0C29D4D719EF8BE000D3E01B /* boy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0C29D4D219EF8BE000D3E01B /* boy.jpg */; };
+		0C29D4D819EF8BE000D3E01B /* girl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0C29D4D319EF8BE000D3E01B /* girl.jpg */; };
+		0C29D4D919EF8BE000D3E01B /* girl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0C29D4D419EF8BE000D3E01B /* girl.mp3 */; };
+		0C29D4DA19EF8BE000D3E01B /* man.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0C29D4D519EF8BE000D3E01B /* man.jpg */; };
+		0C29D4DB19EF8BE000D3E01B /* woman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0C29D4D619EF8BE000D3E01B /* woman.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,12 @@
 		0C29D4BF19EF8ACF00D3E01B /* bifrostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bifrostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C29D4C419EF8ACF00D3E01B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C29D4C519EF8ACF00D3E01B /* bifrostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bifrostTests.swift; sourceTree = "<group>"; };
+		0C29D4CF19EF8BCF00D3E01B /* GameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		0C29D4D219EF8BE000D3E01B /* boy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boy.jpg; sourceTree = "<group>"; };
+		0C29D4D319EF8BE000D3E01B /* girl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = girl.jpg; sourceTree = "<group>"; };
+		0C29D4D419EF8BE000D3E01B /* girl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl.mp3; sourceTree = "<group>"; };
+		0C29D4D519EF8BE000D3E01B /* man.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = man.jpg; sourceTree = "<group>"; };
+		0C29D4D619EF8BE000D3E01B /* woman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = woman.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,7 @@
 		0C29D4A119EF8ACF00D3E01B = {
 			isa = PBXGroup;
 			children = (
+				0C29D4D119EF8BE000D3E01B /* resources */,
 				0C29D4AC19EF8ACF00D3E01B /* bifrost */,
 				0C29D4C219EF8ACF00D3E01B /* bifrostTests */,
 				0C29D4AB19EF8ACF00D3E01B /* Products */,
@@ -77,6 +90,7 @@
 		0C29D4AC19EF8ACF00D3E01B /* bifrost */ = {
 			isa = PBXGroup;
 			children = (
+				0C29D4CF19EF8BCF00D3E01B /* GameView.swift */,
 				0C29D4AF19EF8ACF00D3E01B /* AppDelegate.swift */,
 				0C29D4B119EF8ACF00D3E01B /* ViewController.swift */,
 				0C29D4B319EF8ACF00D3E01B /* Main.storyboard */,
@@ -110,6 +124,18 @@
 				0C29D4C419EF8ACF00D3E01B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0C29D4D119EF8BE000D3E01B /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				0C29D4D219EF8BE000D3E01B /* boy.jpg */,
+				0C29D4D319EF8BE000D3E01B /* girl.jpg */,
+				0C29D4D419EF8BE000D3E01B /* girl.mp3 */,
+				0C29D4D519EF8BE000D3E01B /* man.jpg */,
+				0C29D4D619EF8BE000D3E01B /* woman.jpg */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,9 +218,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C29D4D719EF8BE000D3E01B /* boy.jpg in Resources */,
+				0C29D4D819EF8BE000D3E01B /* girl.jpg in Resources */,
+				0C29D4DB19EF8BE000D3E01B /* woman.jpg in Resources */,
+				0C29D4D919EF8BE000D3E01B /* girl.mp3 in Resources */,
 				0C29D4B519EF8ACF00D3E01B /* Main.storyboard in Resources */,
 				0C29D4BA19EF8ACF00D3E01B /* LaunchScreen.xib in Resources */,
 				0C29D4B719EF8ACF00D3E01B /* Images.xcassets in Resources */,
+				0C29D4DA19EF8BE000D3E01B /* man.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C29D4B219EF8ACF00D3E01B /* ViewController.swift in Sources */,
+				0C29D4D019EF8BCF00D3E01B /* GameView.swift in Sources */,
 				0C29D4B019EF8ACF00D3E01B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
