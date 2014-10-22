@@ -30,54 +30,69 @@ class GameView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.whiteColor()
-
+        
+        // init
+        let key = "girl"
+        var urls = ["man", "woman", "boy", "girl"]
+        
+        // sound
+        let url = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource(key, ofType:"mp3")!)
+        audioPlayer = AVAudioPlayer(contentsOfURL:url, error:nil)
+        let soundBtn = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        soundBtn.setTitle("Sound", forState: UIControlState.Normal)
+        soundBtn.backgroundColor = UIColor.blueColor()
+        soundBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        soundBtn.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Highlighted)
+        soundBtn.addTarget(self, action: "playSound", forControlEvents: .TouchUpInside)
+        
         // image
-        var urls = ["man.jpg", "woman.jpg", "boy.jpg", "girl.jpg"]
+        var imageBtns:[UIButton] = []
+        for url in urls {
+            let b = UIButton.buttonWithType(.Custom) as UIButton
+            b.setBackgroundImage(UIImage(named: url + ".jpg"), forState: UIControlState.Normal)
+            if url == key {
+                b.setTitle("Right", forState: .Highlighted)
+                b.setTitleColor(UIColor.greenColor(), forState: .Highlighted)
+            } else {
+//                b.setTitle("Wrong", forState: .Highlighted)
+//                b.setTitleColor(UIColor.redColor(), forState: .Highlighted)
+                b.setImage(UIImage(named: "girl.jpg"), forState: UIControlState.Highlighted)
+            }
+            imageBtns.append(b)
+        }
+        
+        // layout
         let corner:CGFloat = 3
         let vBorder:CGFloat = 1
         let vWidth = self.frame.width/2-vBorder*2
         let vSize = CGSizeMake(vWidth, vWidth/2*3)
         let vTop = (self.frame.height - (vSize.height + vBorder*2)*2)/2
-        for var index = 0; index < urls.count; index++ {
+        for var index = 0; index < imageBtns.count; index++ {
             let xIndex:CGFloat = (CGFloat)(index%2)
             let yIndex:CGFloat = (CGFloat)(index/2)
-//            let v = UIImageView(image: UIImage(named: urls[index]))
-            let v = UIButton.buttonWithType(UIButtonType.System) as UIButton
-            v.setBackgroundImage(UIImage(named: urls[index]), forState: UIControlState.Normal)
-            v.setTitle("Right", forState: UIControlState.Normal)
-            v.setTitleColor(UIColor.greenColor(), forState: .Normal)
-            v.setTitleColor(UIColor.redColor(), forState: UIControlState.Selected)
+            let b = imageBtns[index]
             
-            v.frame = CGRectMake(xIndex * vSize.width + (xIndex*2 + 1) * vBorder, yIndex * vSize.height + (yIndex*2 + 1) * vBorder + vTop, vSize.width, vSize.height)
-            v.contentMode = UIViewContentMode.ScaleAspectFit
-            v.layer.cornerRadius = corner
-            v.clipsToBounds = true
-            self.addSubview(v)
+            b.frame = CGRectMake(xIndex * vSize.width + (xIndex*2 + 1) * vBorder, yIndex * vSize.height + (yIndex*2 + 1) * vBorder + vTop, vSize.width, vSize.height)
+            b.contentMode = UIViewContentMode.ScaleAspectFit
+            b.layer.cornerRadius = corner
+            b.clipsToBounds = true
+            self.addSubview(b)
         }
         
         // sound button
-        let bt = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
-        bt.setTitle("Sound", forState: UIControlState.Normal)
-        bt.backgroundColor = UIColor.blueColor()
-        bt.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        bt.setTitle("Sound", forState: UIControlState.Selected)
-        bt.setTitleColor(UIColor.redColor(), forState: UIControlState.Selected)
-
-        bt.frame = CGRectMake(vBorder, self.frame.height - vTop + vBorder, self.frame.width - vBorder*2, vTop - vBorder*2)
-        bt.layer.cornerRadius = corner
-        bt.clipsToBounds = true
-        bt.addTarget(self, action: "playSound", forControlEvents: .TouchUpInside)
-        self.addSubview(bt)
+        soundBtn.frame = CGRectMake(vBorder, self.frame.height - vTop + vBorder, self.frame.width - vBorder*2, vTop - vBorder*2)
+        soundBtn.layer.cornerRadius = corner
+        soundBtn.clipsToBounds = true
+        self.addSubview(soundBtn)
         
         // audio
-        let url = NSURL(fileURLWithPath:NSBundle.mainBundle().pathForResource("girl", ofType:"mp3")!)
-        audioPlayer = AVAudioPlayer(contentsOfURL:url, error:nil)
 //        playSound()
     }
     
     
     func playSound() {
-        audioPlayer!.play()
+//        audioPlayer!.play()
+        println("test")
     }
     
 }
